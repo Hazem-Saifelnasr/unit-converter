@@ -33,6 +33,8 @@ Last reviewed by Codex: 2026-03-27
 
 ## Release Packaging
 
+See `docs/RELEASE_PACKAGING.md` for the detailed steps behind each item in this section.
+
 - [ ] Configure real release signing.
   Current state: `android/app/build.gradle.kts` signs release builds with the debug config and is not Play Store ready.
 - [ ] Build and verify a release `apk`.
