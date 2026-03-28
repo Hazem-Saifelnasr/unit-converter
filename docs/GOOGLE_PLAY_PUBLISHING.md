@@ -26,7 +26,7 @@ releases/android/1.0.0+1/unit-converter-1.0.0+1-release.aab
 5. Select testers and roll out the release.
 6. Use this only for quick verification. It does not unlock production access.
 
-## 3. Finish Setting Up The App
+## 3. Finish App Setup, App Content, And Data Safety
 
 1. Open the app `Dashboard`.
 2. Open `Policy and programs` or `App content`, depending on the current Play Console layout.
@@ -44,7 +44,11 @@ releases/android/1.0.0+1/unit-converter-1.0.0+1-release.aab
 7. Complete `Target audience`.
    Choose the audience that fits a general measurement utility app and answer the follow-up questions truthfully.
 8. Complete `Data safety`.
-   Use the answers in section `6` of this guide.
+   If Play Console shows the simplified flow, select `No` for data collection.
+   If it shows the detailed form, declare that the app does not collect data and does not share data.
+   Do not claim account creation, analytics, crash reporting, advertising, or external data transfer because this app does not use them.
+   Keep the answers aligned with the privacy statement in `README.md`.
+   Save the section and confirm there are no remaining warnings for Data safety.
 9. Complete `Government apps`.
    Select `No`, because this app is not an official government app.
 10. Complete `Financial features`.
@@ -73,20 +77,40 @@ Fast offline unit conversions for daily measurements.
 Unit Converter is a clean, lightweight utility for quick daily conversions. Convert length, weight, temperature, area, volume, and speed instantly with an offline-first experience, recent history, result copy, unit swap, and a polished Material 3 interface.
 ```
 
-5. Upload the app icon if Play Console asks for a high-resolution store icon.
-6. Upload screenshots from:
+5. Upload the high-resolution app icon.
+   Requirements: `32-bit PNG`, `512x512`, maximum `1024 KB`.
+   Current asset for this repo:
+
+```text
+release-assets/store-listing/google-play-app-icon-512.png
+```
+
+6. Upload the feature graphic.
+   Requirements: `PNG` or `JPEG`, maximum `15 MB`, `1024x500`.
+   Current asset for this repo:
+
+```text
+release-assets/store-listing/google-play-feature-graphic-1024x500.png
+```
+
+7. Upload screenshots from:
 
 ```text
 release-assets/screenshots/
 ```
 
-7. Set the support email to:
+   Include at least:
+   - phone screenshots from `release-assets/screenshots/`
+   - one `7-inch tablet` screenshot from `release-assets/screenshots/tablets/`
+   - one `10-inch tablet` screenshot from `release-assets/screenshots/tablets/`
+
+8. Set the support email to:
 
 ```text
 hazem.saifelnasr@gmail.com
 ```
 
-8. Save the store listing.
+9. Save the store listing.
 
 ## Privacy Policy Hosting Note
 
@@ -102,30 +126,7 @@ docs/PRIVACY_POLICY.md
 5. If you update the policy later, update both the hosted page and `docs/PRIVACY_POLICY.md`.
 6. For a free GitHub Pages flow, use `docs/GITHUB_PAGES_PRIVACY_POLICY.md`.
 
-## 5. Complete App Content
-
-1. Go to `App content`.
-2. Open `Privacy policy` and provide the final privacy policy URL if Play Console requires one.
-3. Open `App access` and choose `No restrictions` or the equivalent option that says all functionality is available without login.
-4. Open `Ads` and choose `No`.
-5. Complete the content rating questionnaire and submit it.
-6. Complete the target audience section.
-7. Confirm the app is not a news app if that declaration appears.
-8. Set `Government apps` to `No`.
-9. Set `Financial features` to `No`.
-10. Set `Health` to `No`.
-11. Complete any other required app-content declarations shown for the account.
-
-## 6. Complete Data Safety And Privacy
-
-1. Open `Data safety`.
-2. Select `No` for data collection if Play Console allows the simplified flow.
-3. If Play Console shows the detailed form instead, declare that the app does not collect data and does not share data.
-4. Do not claim account creation, analytics, crash reporting, advertising, or external data transfer because this app does not use them.
-5. Keep the answers aligned with the privacy statement in `README.md`.
-6. Save the section and confirm there are no remaining warnings for Data safety.
-
-## 7. Set Up Closed Testing
+## 5. Set Up Closed Testing
 
 1. Open `Testing` -> `Closed testing`.
 2. Create the closed test track if Play Console has not created one already.
@@ -138,9 +139,61 @@ docs/PRIVACY_POLICY.md
 releases/android/1.0.0+1/unit-converter-1.0.0+1-release.aab
 ```
 
-7. Review and confirm the release.
-8. Send the closed test release to Google for review if prompted.
-9. Keep the closed test running for at least `14 days` with at least `12 opted-in testers`.
+7. Set the release name to:
+
+```text
+1.0.0 Closed Test 1
+```
+
+8. Set the release notes to:
+
+```text
+- First closed test release for Unit Converter
+- Offline conversions for length, weight, temperature, area, volume, and speed
+- Includes recent history, result copy, and unit swap
+- Please report crashes, incorrect conversions, and layout issues
+```
+
+9. Review and confirm the release.
+10. Send the closed test release to Google for review if prompted.
+11. Keep the closed test running for at least `14 days` with at least `12 opted-in testers`.
+12. You can add more testers later from `Testing` -> `Closed testing` -> `Manage track` -> `Testers`.
+    Save the changes, resend the opt-in link, and ask the new testers to join with the same Google account you added.
+13. If Play Console shows `Your changes are now in review`, wait for the review result.
+    Review can take a few hours and may take up to `7 days`.
+    The tester opt-in link or updated release may still take a few more hours to appear after approval.
+
+## 6. Recruit And Manage Testers
+
+1. Build a tester pool of at least `15 to 20` people so you still have margin if some do not opt in or uninstall the app.
+2. Start with people you already know:
+   friends, family, coworkers, classmates, or trusted community members who use Android phones or tablets.
+3. Collect the Google account email for each tester.
+   They need a Google account to join the closed test.
+4. Add those emails to the closed testing track in Play Console.
+5. Send each tester the opt-in link from the closed testing page.
+6. Ask every tester to do the same minimum flow:
+   open the opt-in link, join the test, install the app from Google Play, launch it once, and keep it installed during the `14-day` test window.
+7. Ask testers to send short feedback if they see crashes, layout issues, wrong conversions, or confusing UI.
+8. Track who has actually opted in.
+   Do not assume a message reply means they joined the test.
+9. Check Play Console every day until at least `12 testers` show as opted in.
+10. Keep reminding any missing testers before the `14-day` clock is affected.
+11. If you start with fewer than `12` testers, keep adding more testers to the same closed track until you reach the required count.
+
+## 7. Tester Instructions
+
+Share these steps with each tester:
+
+1. Open the private Google Play opt-in link you send.
+2. Sign in with the same Google account you gave for the test.
+3. Tap `Become a tester` or the current equivalent Play Console action.
+4. Open the Play Store listing from that opt-in page.
+5. Install `Unit Converter`.
+6. Open the app at least once and make a few conversions.
+7. Keep the app installed until you tell them the test period is complete.
+8. Send you any issues they find, especially:
+   incorrect conversion values, broken layout, crashes, missing text, or theme issues.
 
 ## 8. Apply For Production Access
 
